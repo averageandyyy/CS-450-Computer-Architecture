@@ -1,0 +1,8 @@
+# Question 1
+Metrics of interest are millions of instructions per second (how many millions of instructions per second) and average execution time per instruction (how long does an instruction take on average). \
+ISA A is 3 IPC (instructions per cycle) with 500MHz clock frequency. \ 
+ISA B is 7 IPC with 200MHz clock frequency.
+1. ISA A: 1 second has 500M cycles, which means 3 * 500M = 1500M instructions per second or 1500 MIPS. Since 1500M instructions are executed in 1 second, average execution time per instruction is 1/1500M about 667 picoseconds.
+2. ISA B: 1 second has 200M cycles, which means 7 * 200M = 1400M instructions per second or 1400 MIPS. Since 1400M instructions are executed in 1 second, average execution time per instruction is 1/1400M about 714 picoseconds.
+3. We cannot say for sure (I don't know). Both processors are running 2 different ISAs, which can be compiled to yield varying number of instructions and complexity as well. For complete fairness, the two different processors should be running the same program compiled to the same ISA, and then we can compare the execution time. When running experiments there should only be one variable changed at a time, in this case the processor architecture being evaluated. \
+Even if we assume the program being ran is the same, and that we knew the number of instructions executed on each ISA, the different ISAs in their size and complexity (many small vs few complex) and compiler optimizations can lead to differences in execution times that are not solely due to the processor architecture alone, making it an unfair comparison.
